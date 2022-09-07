@@ -12,7 +12,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={username ? <ContentLayout /> : <Navigate to="/Login" />} />
-      <Route path="login" element={<Login />} />
+      <Route path="/login" element={<Login />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

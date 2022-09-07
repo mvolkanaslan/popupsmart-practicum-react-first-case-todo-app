@@ -1,0 +1,41 @@
+.header {
+    position: relative;
+    height: 150px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-size: 100% 150%;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 5px;
+  }
+  .day{
+    background-image: url("../../assets/images/day.jpg");
+  }
+  .night{
+    background-image: url("../../assets/images/night.jpg");
+  }
+  .date {
+    position: absolute;
+    left: 10px;
+    bottom: 15px;
+    font-size: 1.25em;
+  }
+  .message {
+    position: absolute;
+    left: 10px;
+    font-size: 1.5em;
+  }
+  .clearIcon {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: 300ms;
+
+  }
+  .clearIcon:hover {
+    transform: rotate(60deg);
+    transition: 300ms;
+  }
