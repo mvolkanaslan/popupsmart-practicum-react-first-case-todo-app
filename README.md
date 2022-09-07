@@ -1,3 +1,18 @@
+# PopupSmart Bootcamp First Case - React Todo App with MockAPI
+## Tecnologies
+### React Redux Toolkit
+### React Router Dom
+### Bootstrap
+### React Inline SVG
+<div>
+<img src="https://github.com/mvolkanaslan/popupsmart-react-first-case/blob/master/src/assets/images/theme-light.png" width="40%"/>
+<img src="https://github.com/mvolkanaslan/popupsmart-react-first-case/blob/master/src/assets/images/theme-dark.png" width="40%"/>
+</div>
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
