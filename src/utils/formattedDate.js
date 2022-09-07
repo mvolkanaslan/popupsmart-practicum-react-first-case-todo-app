@@ -16,5 +16,3 @@ export const getCurrentDate = ()=>{
     };
     return currentDate;
 }
-
-export const currentDate = getCurrentDate()

@@ -1,0 +1,8 @@
+.todos {
+    height: 70vh;
+    overflow: auto;
+    scrollbar-width: none;
+  }
+  .todos::-webkit-scrollbar {
+    display: none;
+  }

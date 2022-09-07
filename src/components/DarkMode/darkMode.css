@@ -1,0 +1,23 @@
+
+.checkbox {
+	opacity: 0;
+	position: absolute;
+}
+
+.back {
+	background-color: rgb(116, 95, 95);
+	border-radius: 100%;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 6px;
+	position: relative;
+	height: 26px;
+	width: 26px;
+	transform: scale(1.5);
+}
+
+
+
+
