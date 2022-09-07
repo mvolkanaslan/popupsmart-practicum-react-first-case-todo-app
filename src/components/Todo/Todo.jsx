@@ -1,7 +1,5 @@
 import React from 'react'
 import "./todo.css"
-import { useDispatch } from 'react-redux';
-import { todoActions } from '../../reducers/todoSlice';
 import { getCurrentDate as currentDate } from '../../utils/formattedDate';
 import Icon from '../Icon/Icon';
 import mockApi from '../../apis/mockapi';
@@ -9,7 +7,6 @@ import mockApi from '../../apis/mockapi';
 
 export default function Todo(props) {
     const todo = props.todo;
-    const dispatch = useDispatch();
 
     // update process used only complate stuation of the todo...
     const todoComplated = (todo) => {
