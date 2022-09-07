@@ -5,8 +5,8 @@
 ### Bootstrap
 ### React Inline SVG
 <div>
-<img src="https://github.com/mvolkanaslan/popupsmart-react-first-case/blob/master/src/assets/images/theme-light.png" style="widht:30%"/>
-<img src="https://github.com/mvolkanaslan/popupsmart-react-first-case/blob/master/src/assets/images/theme-dark.png" style="widht:30%"/>
+<img src="https://github.com/mvolkanaslan/popupsmart-react-first-case/blob/master/src/assets/images/theme-light.png" style="widht:20%"/>
+<img src="https://github.com/mvolkanaslan/popupsmart-react-first-case/blob/master/src/assets/images/theme-dark.png" style="widht:20%"/>
 </div>
 
 
