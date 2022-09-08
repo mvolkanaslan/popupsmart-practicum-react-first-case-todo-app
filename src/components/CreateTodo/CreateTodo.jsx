@@ -6,12 +6,12 @@ import mockApi from "../../apis/mockapi"
 import validation from '../../utils/validation';
 import { toast } from 'react-toastify';
 import ToastConfig from '../../utils/toastConfig.js';
-
-
-
+import { useDispatch } from 'react-redux';
+import { todoActions } from '../../reducers/todoSlice';
 
 
 export default function CreateTodo() {
+    const dispatch = useDispatch()
     const { date, time } = currentDate();
     let todoTitle;
     const todoRef = useRef();
@@ -30,10 +30,10 @@ export default function CreateTodo() {
                 isComplated: false
             }
             await mockApi.addTodo(todo)
-                .then(response => {
+                .then(data => {
                     createFormRef.current.reset()
-                    //get current TodoList from api
-                    mockApi.getTodos()
+                    dispatch(todoActions.addTodoToList(data))
+                    // mockApi.getTodos()
                 })
                 .catch(err => toast.error(`Opps ! : ${err}`,ToastConfig))
         }

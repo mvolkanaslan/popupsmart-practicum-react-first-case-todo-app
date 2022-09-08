@@ -5,9 +5,12 @@ import Icon from '../Icon/Icon';
 import mockApi from '../../apis/mockapi';
 import { toast } from 'react-toastify';
 import ToastConfig from '../../utils/toastConfig.js';
+import { useDispatch } from 'react-redux';
+import { todoActions } from '../../reducers/todoSlice';
 
 
 export default function Todo(props) {
+    const dispatch = useDispatch()
     const todo = props.todo;
 
     // update process used only complate stuation of the todo...
@@ -18,18 +21,21 @@ export default function Todo(props) {
             isComplated: !todo.isComplated,
         };
         mockApi.updateTodo(todo)
-            .then(response => {
-                mockApi.getTodos()
+            .then(data => {
+                dispatch(todoActions.updateTodo(data))
+                // mockApi.getTodos() // cost on network
             })
-            .catch(err => toast.error(`Opps ! : ${err}`,ToastConfig))
+            .catch(err => toast.error(`Opps ! : ${err}`, ToastConfig))
     }
 
     const deleteTodo = (todo) => {
         mockApi.deleteTodo(todo)
             .then(data => {
-                mockApi.getTodos()
+                dispatch(todoActions.deleteTodo(data))
+                // mockApi.getTodos() // cost on network
+
             })
-            .catch(err => toast.error(`Opps ! : ${err}`,ToastConfig))
+            .catch(err => toast.error(`Opps ! : ${err}`, ToastConfig))
     }
 
 
