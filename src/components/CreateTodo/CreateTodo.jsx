@@ -4,6 +4,11 @@ import { getCurrentDate as currentDate } from '../../utils/formattedDate';
 import Icon from '../Icon/Icon';
 import mockApi from "../../apis/mockapi"
 import validation from '../../utils/validation';
+import { toast } from 'react-toastify';
+import ToastConfig from '../../utils/toastConfig.js';
+
+
+
 
 
 export default function CreateTodo() {
@@ -11,6 +16,8 @@ export default function CreateTodo() {
     let todoTitle;
     const todoRef = useRef();
     const createFormRef = useRef();
+
+
     const addTodo = async (e) => {
         e.preventDefault();
         todoTitle = todoRef.current.value
@@ -24,15 +31,11 @@ export default function CreateTodo() {
             }
             await mockApi.addTodo(todo)
                 .then(response => {
-                    //check request status ok
-                    if (response.ok) {
-                        //if todo added, reset form
-                        createFormRef.current.reset()
-                        //get current TodoList from api
-                        mockApi.getTodos()
-                    }
-                    else response.json().then(err => console.log(err))
+                    createFormRef.current.reset()
+                    //get current TodoList from api
+                    mockApi.getTodos()
                 })
+                .catch(err => toast.error(`Opps ! : ${err}`,ToastConfig))
         }
 
 

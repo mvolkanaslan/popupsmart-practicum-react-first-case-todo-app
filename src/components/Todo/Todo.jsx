@@ -3,6 +3,8 @@ import "./todo.css"
 import { getCurrentDate as currentDate } from '../../utils/formattedDate';
 import Icon from '../Icon/Icon';
 import mockApi from '../../apis/mockapi';
+import { toast } from 'react-toastify';
+import ToastConfig from '../../utils/toastConfig.js';
 
 
 export default function Todo(props) {
@@ -17,22 +19,20 @@ export default function Todo(props) {
         };
         mockApi.updateTodo(todo)
             .then(response => {
-                //check request status ok
-                response.ok ?
-                    mockApi.getTodos() :
-                    response.json().then(err => console.log(err))
+                mockApi.getTodos()
             })
+            .catch(err => toast.error(`Opps ! : ${err}`,ToastConfig))
     }
 
     const deleteTodo = (todo) => {
         mockApi.deleteTodo(todo)
-            .then(response => {
-                //check request status ok
-                response.ok ?
-                    mockApi.getTodos() :
-                    response.json().then(err => console.log(err))
+            .then(data => {
+                mockApi.getTodos()
             })
+            .catch(err => toast.error(`Opps ! : ${err}`,ToastConfig))
     }
+
+
     return (
         <div className="todo card  mb-1">
             <div className="card-body d-flex justify-content-between py-1">
